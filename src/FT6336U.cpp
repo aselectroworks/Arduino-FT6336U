@@ -14,7 +14,7 @@ FT6336U::FT6336U(uint8_t rst_n, uint8_t int_n)
 : rst_n(rst_n), int_n(int_n) {
 }
 #ifdef ESP32 || ESP8266
-FT6336U::FT6336U(uint8_t sda, uint8_t scl, uint8_t rst_n, uint8_t int_n) 
+FT6336U::FT6336U(int8_t sda, int8_t scl, uint8_t rst_n, uint8_t int_n) 
 : sda(sda), scl(scl), rst_n(rst_n), int_n(int_n)  {
 }
 #endif
