@@ -11,6 +11,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <Arduino.h>
 
 #define I2C_ADDR_FT6336U 0x38
 

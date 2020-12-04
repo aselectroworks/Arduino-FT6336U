@@ -24,12 +24,16 @@ FT6336U::~FT6336U() {
 
 void FT6336U::begin(void) {
     // Initialize I2C
+#ifdef ESP32 || ESP8266
     if(sda != -1 && scl != -1) {
         Wire.begin(sda, scl); 
     }
     else {
         Wire.begin(); 
     }
+#else 
+    Wire.begin(); 
+#endif
 	// Int Pin Configuration
 	pinMode(int_n, INPUT); 
     // Reset Pin Configuration
