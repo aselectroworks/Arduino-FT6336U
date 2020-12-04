@@ -189,8 +189,8 @@ public:
 private: 
     uint8_t sda = -1; 
     uint8_t scl = -1; 
-    uint8_t int_n = -1; 
     uint8_t rst_n = -1; 
+    uint8_t int_n = -1; 
     
     uint8_t readByte(uint8_t addr); 
     void writeByte(uint8_t addr, uint8_t data); 
