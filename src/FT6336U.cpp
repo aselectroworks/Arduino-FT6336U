@@ -243,7 +243,7 @@ FT6336U_TouchPointType FT6336U::scan(void){
 
 // Private Function
 uint8_t FT6336U::readByte(uint8_t addr) {
-    uint8_t rdData; 
+    uint8_t rdData = 0; 
     uint8_t rdDataCount; 
     do {
         Wire.beginTransmission(I2C_ADDR_FT6336U); 
