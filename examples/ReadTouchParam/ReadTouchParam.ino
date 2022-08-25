@@ -20,6 +20,10 @@ void setup() {
 
 void loop() {
     if(digitalRead(INT_N_PIN) != -1) {
+        // Blank the terminal (not arduino compatible)
+        Serial.printf("\033[H");
+
+        
         Serial.print("FT6336U TD Status: "); 
         Serial.println(ft6336u.read_td_status());  
         Serial.print("FT6336U Touch Event/ID 1: ("); 
