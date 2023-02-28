@@ -125,7 +125,7 @@ class FT6336U
 {
 public: 
     FT6336U(uint8_t rst_n, uint8_t int_n); 
-#if defined(ESP32) || defined(ESP8266)
+#if defined(ESP32) || defined(ESP8266) || defined(ARDUINO_ARCH_STM32)
     FT6336U(int8_t sda, int8_t scl, uint8_t rst_n, uint8_t int_n); 
 #endif
     virtual ~FT6336U(); 
