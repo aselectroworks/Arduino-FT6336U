@@ -1,4 +1,6 @@
 // --------------WT32-SC01 setup start--------------
+#define USER_SETUP_LOADED
+
 #define ST7796_DRIVER
 
 #define TFT_WIDTH  480
