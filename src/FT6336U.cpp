@@ -48,3 +48,7 @@ bool Touch::touched(){
 TS_Point Touch::getPoint(){
 	return TS_Point(HEIGHT, WIDTH, ft6336u.read_touch1_x(), ft6336u.read_touch1_y());
 }
+
+TS_Point Touch::getPoint2(){
+	return TS_Point(HEIGHT, WIDTH, ft6336u.read_touch2_x(), ft6336u.read_touch2_y());
+}
