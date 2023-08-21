@@ -41,6 +41,11 @@
 
 #include "FT6336U.h"
 
+#define TOUCH_I2C_SDA 18
+#define TOUCH_I2C_SCL 19
+#define TOUCH_RST_PIN -1
+#define TOUCH_INT_PIN -1
+
 Touch ctp = Touch(TFT_HEIGHT, TFT_WIDTH, TOUCH_I2C_SDA, TOUCH_I2C_SCL, TOUCH_RST_PIN, TOUCH_INT_PIN);
 
 #define BOXSIZE 40
