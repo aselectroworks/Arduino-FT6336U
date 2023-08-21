@@ -30,8 +30,7 @@ class Touch {
 	int HEIGHT, WIDTH;
 	bool touched();
 	TS_Point getPoint();
-	//TS_Point getPoint1();
-	//TS_Point getPoint2();
+	TS_Point getPoint2();
 };
 
 #endif
