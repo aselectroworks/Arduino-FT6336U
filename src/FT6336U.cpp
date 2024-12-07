@@ -13,7 +13,7 @@
 FT6336U::FT6336U(uint8_t rst_n, uint8_t int_n)
 : rst_n(rst_n), int_n(int_n) {
 }
-#if defined(ESP32) || defined(ESP8266)
+#if defined(ARDUINO_ARCH_ESP32) || defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_TEENSY41) || defined(ARDUINO_TEENSY40) || defined(TEENSYDUINO)
 FT6336U::FT6336U(int8_t sda, int8_t scl, uint8_t rst_n, uint8_t int_n)
 : sda(sda), scl(scl), rst_n(rst_n), int_n(int_n)  {
 }
@@ -24,9 +24,15 @@ FT6336U::~FT6336U() {
 
 void FT6336U::begin(void) {
     // Initialize I2C
-#if defined(ESP32) || defined(ESP8266)
+#if defined(ARDUINO_ARCH_ESP32) || defined(ARDUINO_ARCH_ESP8266) || defined(ARDUINO_TEENSY41) || defined(ARDUINO_TEENSY40) || defined(TEENSYDUINO)
     if(sda != -1 && scl != -1) {
+#if defined(ARDUINO_ARCH_ESP32) || defined(ARDUINO_ARCH_ESP8266)        
         Wire.begin(sda, scl);
+#elif defined(ARDUINO_TEENSY41) || defined(ARDUINO_TEENSY40) || defined(TEENSYDUINO) || defined(TEENSYDUINO) 
+        Wire.setSCL(scl); 
+        Wire.setSDA(sda);        
+        Wire.begin(); 
+#endif        
     }
     else {
         Wire.begin();
